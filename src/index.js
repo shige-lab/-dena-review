@@ -3,16 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import Game from "./Game";
-// import Timer from '../Test';
-// import TodoApp from '../Test';
 import reportWebVitals from "./reportWebVitals";
-// import TextInput from '../Test';
 
 ReactDOM.render(
 	<React.StrictMode>
-		{/* <Timer /> */}
-		{/* <TodoApp /> */}
-		{/* <TextInput /> */}
 		<Game />
 		{/* <App /> */}
 	</React.StrictMode>,

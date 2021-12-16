@@ -6,14 +6,6 @@ const Square = (props) => {
 			{props.value}
 		</button>
 	);
-	//   return (
-	// 	<button
-	// 	  className="square"
-	// 	  onClick={() => setState({value: state.count})}
-	// 	>
-	// 	  {state.value}
-	// 	</button>
-	//   );
 };
 
 const Board = () => {
