@@ -28,6 +28,7 @@ const Board = () => {
 	const [squares, setSquares] = useState(initial);
 	const [status, setStatus] = useState("Next player: ");
 	const [isnext, setIsnext] = useState(true);
+	const [finish, setFinish] = useState(false);
 	let j = 0;
 
 	const can_put = (square, col, row) => {
@@ -81,6 +82,7 @@ const Board = () => {
 		for (i = 0; i < 4; i++) {
 			if (n[i] == 4) {
 				setStatus("Winner: ");
+				setFinish(true);
 				return true;
 			}
 		}
@@ -118,6 +120,14 @@ const Board = () => {
 		}
 
 		return n;
+	};
+
+	const InitGame = () => {
+		setSquares(initial);
+		setIsnext(true);
+		setStatus("Next player: ");
+		setFinish(false);
+		j = 0;
 	};
 
 	return (
@@ -181,6 +191,7 @@ const Board = () => {
 				{renderSquare(j, 5)}
 				{renderSquare(j++, 6)}
 			</div>
+			{finish ? <button onClick={InitGame}>Retry</button> : null}
 		</div>
 	);
 };
