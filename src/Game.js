@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Game.css";
+
 const Square = (props) => {
 	return (
 		<button className="square" onClick={props.onClick}>
@@ -37,7 +38,7 @@ const Board = () => {
 			can_put(square, col, row) == true &&
 			status != "Winner: "
 		) {
-			square[col][row] = isnext ? "X" : "O";
+			square[col][row] = isnext ? "🔵" : "🔴";
 			setSquares(square);
 			if (Board_Scan(col, row, square) == false) setIsnext(!isnext);
 		}
@@ -126,7 +127,7 @@ const Board = () => {
 		<div>
 			<div className="status">
 				{status}
-				{isnext ? "X" : "O"}
+				{isnext ? "🔵" : "🔴"}
 			</div>
 
 			<div className="board-row">
@@ -183,7 +184,7 @@ const Board = () => {
 				{renderSquare(j, 5)}
 				{renderSquare(j++, 6)}
 			</div>
-			{finish ? <button onClick={InitGame}>Retry</button> : null}
+			{finish ? <button className="button" onClick={InitGame}>Retry</button> : null}
 		</div>
 	);
 };
